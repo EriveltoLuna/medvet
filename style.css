@@ -33,9 +33,9 @@ body {
   height: 100%;
 }
 
-/* ESTILOS CONTATO */
+/* ESTILOS CONTACT */
 
-.contato {
+.contact {
   display: grid;
   grid-template-columns: auto auto;
   gap: 0.5rem;
@@ -73,9 +73,9 @@ header span {
   margin: 0px;
 }
 
-/* ESTILOS CONTEUDO */
+/* ESTILOS CONTENT */
 
-.conteudo {
+.content {
   display: grid;
   grid-template-columns: auto 1fr;
   width: 100%;
