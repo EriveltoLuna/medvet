@@ -15,9 +15,8 @@ a {
   text-decoration: none;
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
+a:visited {
+  color: black;
 }
 
 ul {
@@ -29,48 +28,97 @@ body {
   margin: 0rem;
   justify-items: center;
   align-content: start;
-  position: relative;
   height: 100%;
-}
-
-/* ESTILOS CONTACT */
-
-.contact {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 0.5rem;
-  justify-self: left;
-  align-items: center;
-  padding: 1rem;
-  z-index: 1;
-  text-align: left;
-  position: absolute;
-  margin: 0px;
 }
 
 /* ESTILOS HEADER */
 
 header {
+  display: grid;
+  grid-template-columns: 1fr auto;
   z-index: 0;
   width: 100%;
-  text-align: right;
+  text-align: left;
+  align-items: center;
   background-color: aliceblue;
   font-size: 1.5rem;
   font-weight: bold;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  gap: 1rem;
 }
 
-header p,
-header span {
-  padding-right: 1rem;
+@media (max-width: 420px) {
+  header {
+    font-size: 1rem;
+  }
 }
 
-header span {
+.info {
+  padding-left: 1rem;
+  color: rgb(84, 22, 126);
+  width: max-content;
+}
+
+.info span {
   font-style: italic;
   font-size: 1rem;
   font-weight: normal;
-  margin: 0px;
+  color: teal;
+}
+
+.contact {
+  background-color: rgb(216, 229, 240);
+  display: grid;
+  grid-template-columns: auto;
+  z-index: 1;
+  right: 0px;
+  position: relative;
+  width: max-content;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.contact img {
+  padding: 1rem;
+}
+
+.contact a:hover {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(26deg)
+    brightness(101%) contrast(103%);
+}
+
+.contact a{
+  color: rgb(84, 22, 126);
+}
+.container:hover {
+  background-color: rgb(129, 116, 173);
+}
+
+.container {
+  position: relative;
+}
+
+.contact::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: teal;
+}
+
+.container:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: teal;
 }
 
 /* ESTILOS CONTENT */
@@ -80,46 +128,50 @@ header span {
   grid-template-columns: auto 1fr;
   width: 100%;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* ESTILOS NAV */
 
-nav {
+.container2 {
   padding-left: 1rem;
-  display: block;
-  justify-self: start;
 }
 
-nav ul {
-  display: flex;
-  flex-direction: column;
+.container2 li {
+  display: block;
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: -5px 5px teal, -5px -5px teal, 5px 5px teal, 2px -1px teal;
+}
+
+.container2 a {
+  display: block;
+  padding: 1rem;
+  margin: 0px;
+  border-radius: 0.5rem;
+}
+
+.container2 a:hover {
+  background-color: rgb(129, 116, 173);
+  color: aliceblue;
+}
+
+.container3 {
+  display: grid;
   text-align: center;
   gap: 1rem;
   margin: 0px;
   padding: 0px;
-  flex-wrap: wrap;
 }
 
-nav li {
-  background-color: aliceblue;
-  border-radius: 0.5rem;
-  color: rgb(129, 116, 173);
-  text-transform: capitalize;
-  margin: 0px;
-  padding: 0px;
-}
-
-li a {
-  display: block;
-  padding: 1rem;
-  margin: 0px;
-}
-
-nav li:hover,
-main a:hover {
-  background-color: rgb(129, 116, 173);
-  color: aliceblue;
+@media (max-width: 420px) {
+  .container3 a {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
 }
 
 /* ESTILOS MAIN */
@@ -139,11 +191,13 @@ main h1 {
   font-size: 1rem;
   align-self: center;
   text-align: center;
+  color:rgb(129, 116, 173);
 }
 
-main p{
+main p {
   font-size: 1rem;
   text-align: left;
+  color: teal;
 }
 
 main a {
@@ -152,11 +206,27 @@ main a {
   padding: 0.5rem;
   border-radius: 0.5rem;
   text-transform: capitalize;
+  position: relative;
 }
 
-ul li {
+main .container2{
+  padding: 0px;
+}
+
+main .container2 a {
+padding: 0.5rem;
+}
+
+main ul li {
   font-size: 1rem;
   text-transform: capitalize;
+  color: teal;
+}
+
+@media (max-width: 420px) {
+  main h1, main p, main a{
+    font-size: 0.9rem;
+  }
 }
 
 /* ESTILOS FOOTER */
@@ -171,6 +241,11 @@ footer {
   padding: 10px 0px 10px;
 }
 
+footer p {
+  color: teal;
+}
 footer a {
   text-decoration: underline;
+  color: teal;
+  
 }
